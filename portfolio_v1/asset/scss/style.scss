@@ -1,0 +1,311 @@
+@import "reset.scss";
+
+*::-webkit-scrollbar {
+    // width: 3px;
+    // height: 3px;
+    // background: black;
+    display: none;
+}
+
+// *::-webkit-scrollbar-thumb {
+//   background: rgb(63, 63, 63);
+//   border-radius: 10px;
+// }
+
+*, a, h1, h2, p{
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(#2b1055, #7597de);
+    overflow-x: hidden;
+
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 30px 50px;
+        width: calc(100% - 100px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 3;
+    
+        .logo{
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    
+        ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            li{
+                margin-left: 20px;
+    
+                a{
+                    text-decoration: none;
+                    padding: 6px 15px;
+                    color: white;
+                    border-radius: 20px;
+    
+                    &:hover, &.active{
+                        background: white;
+                        color: #2b1055;
+                    }
+                }
+            }
+        }
+    }
+        
+    section{
+    min-height: 100vh;
+    }
+
+    #home{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        padding-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            will-change: left, top;
+        }
+    
+        #myName{
+            position: absolute;
+            top: 55%;
+            left: 60%;
+            color: white;
+            text-shadow: 0 1px 45px rgb(0, 0, 0);
+            font-size: 5em;
+            font-weight: bold;
+            white-space: nowrap;
+            z-index: 1;
+            will-change: transform, left;
+        }
+    
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            &#stars{
+                z-index: -3;
+            }
+        
+            &#moon{
+                mix-blend-mode: screen;
+                z-index: -2;
+            }
+        
+            &#mountains_front{
+                z-index: 2;
+            }
+
+            &#mountains_behind{
+                z-index: -1;
+            }
+        }
+    
+        #arrow{
+            position: absolute;
+            width: 150px;
+            height: 60px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            animation: arrow 1.5s ease-in-out infinite;
+        
+            @keyframes arrow{
+                from{
+                    top: 68%;
+                }
+                to{
+                    top: 80%;
+                }
+            }
+        
+            span{
+                grid-column: 1;
+                grid-row: 1;
+                justify-self: center;
+                align-self: flex-end;
+                width: 60px;
+                height: 10px;
+                background: white;
+                border-radius: 20px;
+            
+                &:nth-child(1){
+                    transform: rotate(45deg) translate(-50%, -50%);
+                }
+                &:nth-child(2){
+                    transform: rotate(-45deg) translate(50%, -50%);
+                }
+            }
+        }
+    }
+    #about{
+        display: grid;
+        grid-template-rows: 5%, 95%;
+    
+        .txtBox{
+            grid-row: 1 / 2;
+            background: radial-gradient(ellipse farthest-corner at 25% 25%, rgb(40, 0, 77) 0%, rgb(14, 0, 6) 65%, darken(rgb(77, 0, 71), 10%) 80%);
+            padding: 7em;
+            color: white;
+            line-height: 1.5;
+        
+            h2{
+                font-size: 3em;
+                padding-bottom: 0.75em;
+            }
+        }
+    }
+
+    #contact{
+        width: 100%;
+        background: radial-gradient(ellipse farthest-corner at 5% 5%, rgb(40, 0, 77) 0%, rgb(14, 0, 6) 65%, darken(rgb(77, 0, 71), 10%) 80%);
+        display: grid;
+        grid-template-columns: 1fr minmax(250px, 400px) 1fr;
+        grid-template-rows: 10px 1fr 10px;
+
+        .canvas{
+            height: 100%;
+            width: 100%;
+            grid-column: 1 / 4;
+            grid-row: 1 / 4;
+        }
+
+        .formContainer{
+            grid-column: 2;
+            grid-row: 2;
+            justify-self: center;
+            align-self: center;
+            width: 99%;
+            height: 600px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        
+            .formTitle{
+                font-size: 25px;
+                font-weight: bold;
+                color: white;
+                padding: 45px 0 20px 0;
+                margin-right: 41%;
+                transition: margin-right 1s ease-in-out;
+            }
+        
+            .formInput{
+                border: none;
+                outline: none;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 35px;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+                padding: 10px 20px;
+                width: 70%;
+                font-size: 16px;
+                letter-spacing: 1px;
+                color: white;
+            
+                &::placeholder{
+                    color: white;
+                }
+            
+                &:focus{
+                    &::placeholder{
+                        color: rgba(255, 255, 255, 0.3);
+                    }
+                }
+            }
+        
+            // Solution pour que l'autofill ne mette pas de fond blanc et mettre le texte en blanc
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            input:-webkit-autofill:active {
+                -webkit-transition: background-color 9999s ease-out;
+                -webkit-transition-delay: 9999s;
+                -webkit-text-fill-color: white;
+            }
+        
+            .msg{
+                width: 70%;
+                height: 200px;
+                resize: none;
+                border: none;
+                outline: none;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+                padding: 10px 20px;
+                font-size: 16px;
+                color: white;
+                font-family: 'Times New Roman', Times, serif;
+                
+                &::placeholder{
+                    color: white;
+                    font-family: 'Open Sans', sans-serif;
+                }
+                
+                &:focus{
+                    &::placeholder{
+                        color: rgba(255, 255, 255, 0.3);
+                    }
+                }
+            }
+        
+            .formSend{
+                border: none;
+                outline: none;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 35px;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                padding: 10px 20px;
+                width: 80%;
+                font-size: 16px;
+                letter-spacing: 1px;
+                color: white;
+            
+                &:hover{
+                    cursor: pointer;
+                    background: rgba(0, 0, 0, 0.5);
+                }
+            
+                &:focus{
+                    background: rgba(255, 255, 255, 0.5);
+                }
+            }
+        }
+    }
+}

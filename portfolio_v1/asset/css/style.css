@@ -1,0 +1,343 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+*, a, h1, h2, p {
+  font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(#2b1055, #7597de);
+  overflow-x: hidden;
+}
+body header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 30px 50px;
+  width: calc(100% - 100px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+body header .logo {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+body header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body header ul li {
+  margin-left: 20px;
+}
+body header ul li a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: white;
+  border-radius: 20px;
+}
+body header ul li a:hover, body header ul li a.active {
+  background: white;
+  color: #2b1055;
+}
+body section {
+  min-height: 100vh;
+}
+body #home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #home img {
+  will-change: left, top;
+}
+body #home #myName {
+  position: absolute;
+  top: 55%;
+  left: 60%;
+  color: white;
+  text-shadow: 0 1px 45px rgb(0, 0, 0);
+  font-size: 5em;
+  font-weight: bold;
+  white-space: nowrap;
+  z-index: 1;
+  will-change: transform, left;
+}
+body #home img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body #home img#stars {
+  z-index: -3;
+}
+body #home img#moon {
+  mix-blend-mode: screen;
+  z-index: -2;
+}
+body #home img#mountains_front {
+  z-index: 2;
+}
+body #home img#mountains_behind {
+  z-index: -1;
+}
+body #home #arrow {
+  position: absolute;
+  width: 150px;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  -webkit-animation: arrow 1.5s ease-in-out infinite;
+          animation: arrow 1.5s ease-in-out infinite;
+}
+@-webkit-keyframes arrow {
+  from {
+    top: 68%;
+  }
+  to {
+    top: 80%;
+  }
+}
+@keyframes arrow {
+  from {
+    top: 68%;
+  }
+  to {
+    top: 80%;
+  }
+}
+body #home #arrow span {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: flex-end;
+  width: 60px;
+  height: 10px;
+  background: white;
+  border-radius: 20px;
+}
+body #home #arrow span:nth-child(1) {
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+body #home #arrow span:nth-child(2) {
+  transform: rotate(-45deg) translate(50%, -50%);
+}
+body #about {
+  display: grid;
+  grid-template-rows: 5%, 95%;
+}
+body #about .txtBox {
+  grid-row: 1/2;
+  background: radial-gradient(ellipse farthest-corner at 25% 25%, rgb(40, 0, 77) 0%, rgb(14, 0, 6) 65%, #1a0018 80%);
+  padding: 7em;
+  color: white;
+  line-height: 1.5;
+}
+body #about .txtBox h2 {
+  font-size: 3em;
+  padding-bottom: 0.75em;
+}
+body #contact {
+  width: 100%;
+  background: radial-gradient(ellipse farthest-corner at 5% 5%, rgb(40, 0, 77) 0%, rgb(14, 0, 6) 65%, #1a0018 80%);
+  display: grid;
+  grid-template-columns: 1fr minmax(250px, 400px) 1fr;
+  grid-template-rows: 10px 1fr 10px;
+}
+body #contact .canvas {
+  height: 100%;
+  width: 100%;
+  grid-column: 1/4;
+  grid-row: 1/4;
+}
+body #contact .formContainer {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+  width: 99%;
+  height: 600px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+body #contact .formContainer .formTitle {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  padding: 45px 0 20px 0;
+  margin-right: 41%;
+  transition: margin-right 1s ease-in-out;
+}
+body #contact .formContainer .formInput {
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  width: 70%;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: white;
+}
+body #contact .formContainer .formInput::-moz-placeholder {
+  color: white;
+}
+body #contact .formContainer .formInput:-ms-input-placeholder {
+  color: white;
+}
+body #contact .formContainer .formInput::placeholder {
+  color: white;
+}
+body #contact .formContainer .formInput:focus::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+body #contact .formContainer .formInput:focus:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+body #contact .formContainer .formInput:focus::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+body #contact .formContainer input:-webkit-autofill,
+body #contact .formContainer input:-webkit-autofill:hover,
+body #contact .formContainer input:-webkit-autofill:focus,
+body #contact .formContainer input:-webkit-autofill:active {
+  -webkit-transition: background-color 9999s ease-out;
+  -webkit-transition-delay: 9999s;
+  -webkit-text-fill-color: white;
+}
+body #contact .formContainer .msg {
+  width: 70%;
+  height: 200px;
+  resize: none;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+body #contact .formContainer .msg::-moz-placeholder {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+body #contact .formContainer .msg:-ms-input-placeholder {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+body #contact .formContainer .msg::placeholder {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+body #contact .formContainer .msg:focus::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+body #contact .formContainer .msg:focus:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+body #contact .formContainer .msg:focus::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+body #contact .formContainer .formSend {
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  width: 80%;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: white;
+}
+body #contact .formContainer .formSend:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+}
+body #contact .formContainer .formSend:focus {
+  background: rgba(255, 255, 255, 0.5);
+}
